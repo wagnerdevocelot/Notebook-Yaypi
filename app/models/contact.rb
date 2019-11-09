@@ -1,6 +1,11 @@
 class Contact < ApplicationRecord
     belongs_to :kind#, optional: true
 
+    def birthdate_br
+      I18n.l(self.birthdate) unless self.birthdate.blank?
+    end
+
+
         
     #end
     #def author
@@ -17,14 +22,6 @@ class Contact < ApplicationRecord
      #       methods: [ :kind_description, :author ]
     #    )
    # end
-
-   def hello
-      I18n.t('hello')
-   end
-
-   def lang
-      I18n.default_locale
-   end
 
   
 end

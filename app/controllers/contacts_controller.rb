@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
   def index
     @contacts = Contact.all
 
-    render json: @contacts, methods: [ :hello, :lang ]
+    render json: @contacts, methods: :birthdate_br
   end
 
   # GET /contacts/1
