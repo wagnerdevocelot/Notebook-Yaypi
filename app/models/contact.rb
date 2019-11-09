@@ -1,4 +1,6 @@
 class Contact < ApplicationRecord
+    belongs_to :kind
+
     def author
         "Wagner Abrantes"
     end
