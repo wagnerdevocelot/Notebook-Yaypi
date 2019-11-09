@@ -18,5 +18,13 @@ class Contact < ApplicationRecord
     #    )
    # end
 
+   def hello
+      I18n.t('hello')
+   end
+
+   def lang
+      I18n.default_locale
+   end
+
   
 end
