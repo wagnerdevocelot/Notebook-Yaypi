@@ -1,6 +1,11 @@
 namespace :dev do
   desc "Configura o ambiente de desenvolvimento"
   task setup: :environment do
+
+
+
+    ###############################################
+
     puts "Cadastrando tipos..."
 
     kinds = %W(Amigo Comercial Conhecido)
@@ -13,6 +18,7 @@ namespace :dev do
 
     puts "Tipos cadastrados com sucesso!"
 
+    ###############################################
 
     puts "Cadastrando contatos..."
 
@@ -26,6 +32,15 @@ namespace :dev do
     end
 
     puts "Contatos cadastrados com sucesso!"
-  end
 
+    ###############################################
+
+    Contact.all.each do |contact|
+      Random.rand(5).times do |i|
+        Phone.create!(number:Faker::PhoneNumber.cell_phone, contact: contact)
+      end
+    end
+
+
+  end
 end
