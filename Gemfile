@@ -41,6 +41,7 @@ group :development do
   gem 'spring'
   # A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker'
+  gem 'pry-rails'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
