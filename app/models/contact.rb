@@ -9,11 +9,7 @@ class Contact < ApplicationRecord
     accepts_nested_attributes_for :address, update_only: true
 
 
-    def as_json(options = {})
-      h = super(options)
-      h [:birthdate] = (I18n.l(self.birthdate)unless self.birthdate.blank?)
-      h
-    end
+
 
     #def birthdate_br
     #  I18n.l(self.birthdate) unless self.birthdate.blank?
